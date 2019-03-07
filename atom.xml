@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mingway.xyz/"/>
-  <updated>2019-03-06T12:25:28.292Z</updated>
+  <updated>2019-03-07T12:18:48.984Z</updated>
   <id>http://mingway.xyz/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019-bug-notes</title>
+    <link href="http://mingway.xyz/2019/03/06/2019-bug-notes/"/>
+    <id>http://mingway.xyz/2019/03/06/2019-bug-notes/</id>
+    <published>2019-03-06T12:03:31.000Z</published>
+    <updated>2019-03-07T12:18:48.984Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="2019-BUG记录"><a href="#2019-BUG记录" class="headerlink" title="2019-BUG记录"></a>2019-BUG记录</h1><p><img src="/2019/03/06/2019-bug-notes/2.jpg" alt="图片"></p><blockquote><p>记录2019年遇到的bug及其解决方式，避免入坑</p></blockquote><a id="more"></a><h2 id="FastJson解析字符串出现异常–20190307"><a href="#FastJson解析字符串出现异常–20190307" class="headerlink" title="FastJson解析字符串出现异常–20190307"></a>FastJson解析字符串出现异常–20190307</h2><p>使用 <strong>FastJson</strong> 解析字符串时出现 <code>java.lang.ClassCastException: java.lang.String cannot be cast to com.alibaba.fastjson.JSONObject</code> 异常；<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"&#123;\"website\":\"chinamobilesh\", \"create_time\":1531973610000&#125;"</span>;</span><br><span class="line">JSONObject json = JSON.parseObject(str);    <span class="comment">//不会出现异常</span></span><br></pre></td></tr></table></figure></p><p>但是在web工程中使用，则出现异常，控制台输出的字符串：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"&#123;\"website\":\"chinamobilesh\", \"create_time\":1531973610000&#125;"</span></span><br></pre></td></tr></table></figure></p><p>后面再仔细一想，发现字符串在控制台输出应该是不带双引号的，才确定是该原因导致，<strong>MARK</strong> 一下，记录下来，避免再次入坑；</p><h2 id="未完…待续…"><a href="#未完…待续…" class="headerlink" title="未完…待续…"></a>未完…待续…</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;2019-BUG记录&quot;&gt;&lt;a href=&quot;#2019-BUG记录&quot; class=&quot;headerlink&quot; title=&quot;2019-BUG记录&quot;&gt;&lt;/a&gt;2019-BUG记录&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2019/03/06/2019-bug-notes/2.jpg&quot; alt=&quot;图片&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;记录2019年遇到的bug及其解决方式，避免入坑&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="BUG" scheme="http://mingway.xyz/categories/BUG/"/>
+    
+    
+      <category term="Java" scheme="http://mingway.xyz/tags/Java/"/>
+    
+      <category term="BUG" scheme="http://mingway.xyz/tags/BUG/"/>
+    
+  </entry>
   
   <entry>
     <title>springboot01-es</title>
